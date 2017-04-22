@@ -4,8 +4,10 @@ one:
   body: MyText
   commentable_id: 1
   commentable_type: MyString
+  user_id: 1
 
 two:
   body: MyText
   commentable_id: 1
   commentable_type: MyString
+  user_id: 1
