@@ -1,5 +1,14 @@
+<!-- app/views/comments/_comment.html.erb -->
 <li>
     <%= time_ago_in_words(comment.created_at) %> ago by <%= comment.user.email %> ago
     <br>
     <%= comment.body %>
-</li>
+    <div class="reply-button">reply</div>
+    <div class="reply-form">
+      <%= form_for [comment, Comment.new] do |f| %>
+        <%= f.text_area :body %>
+        <%= f.submit "save" %>
+      <% end %>
+    </div>
+    <ul><%= render partial: 'comments/comment', collection: comment.comments %></ul>
+ </li>
